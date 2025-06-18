@@ -4,13 +4,21 @@ Este sistema simula una plataforma de adopción de perros, implementando unicame
 
 ## Estructura del proyecto
 - `clases/`: contiene todas las clases del modelo
+
 📁 clases/
+
 ├── init.py
+
 ├── perro.py
+
 ├── perro_mayor.py
+
 ├── sistema_adopcion.py
+
 └── usuario_adoptante.py
+
 📄 main.py - `main.py`: menú de consola para interactuar con el sistema
+
 📄 README.md
 
 ## Funcionalidades del sistema
