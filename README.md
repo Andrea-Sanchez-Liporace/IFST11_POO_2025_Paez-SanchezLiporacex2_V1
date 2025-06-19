@@ -35,5 +35,7 @@ Este sistema simula una plataforma de adopción de perros, implementando unicame
 - Natalia Sanchez Liporace
 
 Trabajo Práctico grupal - Versión 1: desarrollo sin Django. 
+
 'Desarrollo de Sistemas Orientado a Objetos' - Phyton
+
 IFTS11 - Parque Patricios - CABA - Argentina
