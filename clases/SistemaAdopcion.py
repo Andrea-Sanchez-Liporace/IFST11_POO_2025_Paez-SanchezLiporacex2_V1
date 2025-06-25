@@ -8,22 +8,30 @@ class SistemaAdopcion:
     # Método para crear un nuevo perro y agregarlo a la lista de perros.
     def cargar_perro(self, perro):
         self.perros.append(perro)
-        print(f"El perro se cargó correctamente")
+        perro.mostrar_id_perro()
 
     # Método para eliminar un perro de la lista de perros.
     def eliminar_perro(self, id_perro):
-        self.perros = [perro for perro in self.perros if perro.id != id_perro]
-        print(f"El perro se eliminó correctamente")
+        perro_a_eliminar = None
+        for perro in self.perros:
+            if str(perro.id) == str(id_perro): # perro.id es un entero pero, id_perro es un string. Por eso convertimos ambos a string para que al comparar los datos, arroje un resultado correcto.
+                perro_a_eliminar = perro # Guardo la info del perro que quiero eliminar porque en el mensaje de confirmación queremos mostrar el nombre y el id del perro eliminado.
+                break
+        if perro_a_eliminar:
+            self.perros.remove(perro_a_eliminar)
+            print(f"El perro '{perro_a_eliminar.nombre}' con ID {perro_a_eliminar.id} se eliminó correctamente.")
+        else:
+            print("No se encontró ningún perro con ese ID.")
 
     # Método para crear un nuevo usuario y agregarlo a la lista de usuarios.
     def registrar_usuario(self, usuario):
         self.usuarios.append(usuario)
-        print(f"El usuario se cargó correctamente")
+        usuario.mostrar_id_usuario()
 
     # Método de búsqueda de un perro por ID.
     def buscar_perro(self, id_perro):
         for perro in self.perros:
-            if perro.id == id_perro:
+            if str(perro.id) == str(id_perro): # perro.id es un entero pero, id_perro es un string. Por eso convertimos ambos a string para que al comparar los datos, arroje un resultado correcto.
                 return perro
         return print(f"El perro que estás buscando, no existe! Lo borraste o nunca lo creaste")
  
@@ -83,3 +91,9 @@ class SistemaAdopcion:
         for perro in self.perros:
             if estado is None or perro.estado == estado:
                 perro.mostrar_info_perro()
+
+    # Método que muestra el listado de usuarios adoptantes.
+    def mostrar_usuarios(self):
+        print(f"Listado de usuarios adoptantes registrados")
+        for usuario in self.usuarios:
+            usuario.mostrar_info_usuario()

@@ -18,6 +18,15 @@ class UsuarioAdoptante:
         }
         self.historial_adopciones = [] # Lista de perros adoptados
 
+    # Método para mostrar el id que crea el sistema al usuario, al momento de crearlo.    
+    def mostrar_id_usuario(self):
+        print(f"El usuario se creo con el id: {self.id}")
+
+    # Método para mostrar información básica del usuario.
+    def mostrar_info_usuario(self):
+        print(f"Nombre: {self.nombre}, {self.apellido} (ID: {self.id}) está registrado con el DNI: {self.dni}. Su mail es: {self.email}")
+        print(f"-.-.-")
+
     # Método para modificar datos del usuario y/o sus preferencias
     def modificar_datos(self, nombre, apellido, dni, email, sexo, raza, edad, tamaño):
         if nombre: self.nombre = nombre

@@ -16,10 +16,14 @@ class Perro:
         self.estado = estado # 'disponible', 'reservado', 'adoptado'.
         self.temperamento = temperamento # carácter del perro (tranquilo, juguetón, etc.).
 
+    # Método para mostrar el id que crea el sistema al perro, al momento de crearlo.    
+    def mostrar_id_perro(self):
+        print(f"El animalito se creo con el id: {self.id}")
+
     # Método para cambiar el estado del perro ('disponible', 'reservado', 'adoptado').
     def cambiar_estado(self, nuevo_estado):
         self.estado = nuevo_estado
 
     # Método para mostrar información básica del perro.
     def mostrar_info_perro(self):
-        print(f"{self.nombre} ({self.raza}) - Edad: {self.edad} años, Tamaño: {self.tamaño}, Estado: {self.estado}")
+        print(f"{self.nombre} ({self.raza} - ID: {self.id}) - Edad: {self.edad} años, Tamaño: {self.tamaño}, Estado: {self.estado}")

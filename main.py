@@ -8,19 +8,20 @@ def main():
 
     # Menú de opciones
     while True:
-        print("\n Menú del Sistema de Adopción")
+        print("\n Menu del Sistema de Adopcion")
         print("1. Registrar usuario")
         print("2. Cargar perro")
         print("3. Eliminar perro")       
         print("4. Mostrar perros disponibles")
-        print("5. Postular a adopción")
-        print("6. Confirmar adopción")
+        print("5. Postular a adopcion")
+        print("6. Confirmar adopcion")
         print("7. Sugerencias por preferencias")
         print("8. Ver historial de usuario")
+        print("9. Ver listado de usuarios adoptantes")
         print("0. Salir")
 
         # El usuario selecciona una opción
-        opcion = input("Elegí una opción: ")
+        opcion = input("Elegi una opcion: ")
 
         # Opción 1: Registrar nuevo usuario adoptante
         if opcion == "1":
@@ -89,7 +90,7 @@ def main():
             dni_usuarioAdoptante = input("DNI del usuario: ")
             usuario = sistema.buscar_usuario(dni_usuarioAdoptante)
             if usuario:
-                sistema.recomendar_perros(usuario.preferencias)
+                sistema.recomendar_perros(usuario)
             else:
                 print("Usuario no encontrado.")
 
@@ -102,9 +103,13 @@ def main():
             else:
                 print("Usuario no encontrado.")
 
+        # Opción 9: Mostrar usuarios adoptantes
+        elif opcion == "9":
+            sistema.mostrar_usuarios()
+
         # Opción 0: Salir del programa
         elif opcion == "0":
-            print("👋 ¡Hasta luego!")
+            print("¡Hasta luego!")
             break
 
         # En caso de que el usuario ingrese una opción inválida
