@@ -34,7 +34,7 @@ class SistemaAdopcion:
             if str(perro.id) == str(id_perro): # perro.id es un entero pero, id_perro es un string. Por eso convertimos ambos a string para que al comparar los datos, arroje un resultado correcto.
                 return perro
         return print(f"El perro que estás buscando, no existe! Lo borraste o nunca lo creaste")
- 
+
     # Método de búsqueda de un usuario por DNI.
     def buscar_usuario(self, dni_usuarioAdoptante):
         for usuario in self.usuarios:
